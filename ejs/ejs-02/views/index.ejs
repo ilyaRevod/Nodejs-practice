@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EJS</title>
+</head>
+
+<body>
+  <h1>
+    <!-- Title -->
+    <%= title %>
+  </h1>
+  <p>Current second:
+    <!-- Current second -->
+    <%= seconds %>
+  </p>
+  <% if (seconds % 2===0) { %>
+    <ul>
+      <!-- List goes here if current second is even. -->
+      <%items.forEach((param)=> { %>
+        <li>
+          <%= param %>
+        </li>
+        <%}) %>
+    </ul>
+    <% } else {%>
+      <p>No items to display</p>
+      <% } %>
+
+        <p>
+          <!-- HTML content -->
+          <%- htmlContent %>
+        </p>
+
+        <!-- Footer -->
+        <%- include("footer.ejs") %>
+</body>
+
+</html>

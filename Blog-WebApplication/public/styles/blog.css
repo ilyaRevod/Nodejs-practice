@@ -1,0 +1,11 @@
+.blog__section {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.blog__container {
+  text-align: left;
+  width: 40%;
+  padding-top: 2rem;
+}

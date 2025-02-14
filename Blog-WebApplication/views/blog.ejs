@@ -1,0 +1,41 @@
+<!-- Header -->
+<%- include("partials/header.ejs") %>
+
+  <!-- Blog -->
+  <section class="blog__section">
+    <div class="blog__container">
+      <!-- Title -->
+      <% if (locals.title) { %>
+        <h1>
+          <%= title %>
+        </h1>
+        <% } else { %>
+          <h1>
+            Default Heading
+          </h1>
+          <% } %>
+
+            <!-- Content -->
+            <% if (locals.content) { %>
+              <p>
+                <%= content %>
+              </p>
+              <% } else { %>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat aperiam sit in beatae unde
+                  veritatis,
+                  possimus molestiae ullam quibusdam consequatur officia doloribus hic voluptatem incidunt corporis aut
+                  fugit
+                  vero!
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus possimus voluptatem fugiat dolore
+                  ducimus
+                  rerum inventore vero tempora id commodi neque blanditiis libero repellat autem, at deleniti, voluptate
+                  doloremque
+                  fuga?
+                </p>
+                <% } %>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <%- include("partials/footer.ejs") %>

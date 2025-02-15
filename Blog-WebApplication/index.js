@@ -7,6 +7,8 @@ const PORT = 3000;
 // routes
 const createPost = require('./routes/createPost');
 const editPost = require('./routes/editPost');
+const deletePost = require('./routes/deletePost');
+const readPost = require('./routes/readPost');
 
 
 // static files
@@ -24,9 +26,7 @@ app.use(morgan('tiny'));
 
 
 // home page
-app.get('/', (req, res) => {
-  res.render('index');
-});
+app.use('/', readPost);
 
 // blog page
 app.get('/blog', (req, res) => {
@@ -39,6 +39,10 @@ app.use('/create', createPost);
 
 // edit post page
 app.use('/edit', editPost);
+
+
+// delete post page
+app.use('/delete', deletePost);
 
 
 app.listen(PORT, () => {

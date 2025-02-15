@@ -1,39 +1,42 @@
 <!-- Header -->
-<%- include("partials/header.ejs") %>
+<%- include("partials/header.ejs", { headerPath: "View Post" }) %>
 
-  <!-- Blog -->
-  <section class="blog__section">
-    <div class="blog__container">
-      <!-- Title -->
-      <% if (locals.title) { %>
-        <h1>
-          <%= title %>
-        </h1>
-        <% } else { %>
-          <h1>
-            Default Heading
+  <!-- Bootstrap Styling -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <section class="blog__section py-5" style="min-height: calc(100vh - 68px - 60px); background-color: #f8f9fa;">
+    <div class="container">
+      <div class="blog__container p-4 shadow-lg bg-white rounded">
+        <!-- Title -->
+        <% if (locals.title) { %>
+          <h1 class="text-center text-primary mb-4">
+            <%= title %>
           </h1>
-          <% } %>
+          <% } else { %>
+            <h1 class="text-center text-secondary mb-4">
+              Default Heading
+            </h1>
+            <% } %>
 
-            <!-- Content -->
-            <% if (locals.content) { %>
-              <p>
-                <%= content %>
-              </p>
-              <% } else { %>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat aperiam sit in beatae unde
-                  veritatis,
-                  possimus molestiae ullam quibusdam consequatur officia doloribus hic voluptatem incidunt corporis aut
-                  fugit
-                  vero!
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus possimus voluptatem fugiat dolore
-                  ducimus
-                  rerum inventore vero tempora id commodi neque blanditiis libero repellat autem, at deleniti, voluptate
-                  doloremque
-                  fuga?
+              <!-- Content -->
+              <% if (locals.content) { %>
+                <p class="lead text-dark">
+                  <%= content %>
                 </p>
-                <% } %>
+                <% } else { %>
+                  <p class="text-muted">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat aperiam sit in beatae unde
+                    veritatis, possimus molestiae ullam quibusdam consequatur officia doloribus hic voluptatem incidunt
+                    corporis aut
+                    fugit vero!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus possimus voluptatem fugiat
+                    dolore
+                    ducimus rerum inventore vero tempora id commodi neque blanditiis libero repellat autem, at deleniti,
+                    voluptate
+                    doloremque fuga?
+                  </p>
+                  <% } %>
+      </div>
     </div>
   </section>
 
